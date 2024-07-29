@@ -860,6 +860,10 @@ footer .credit a {
     display: inline-block;
   }
 
+  .navbar .navbar-av {
+    display: none;
+  }
+
   .navbar .navbar-nav {
     position: absolute;
     top: 100%;
@@ -949,5 +953,11 @@ footer .credit a {
   }
   .marquee-container {
     font-size: 0.9rem;
+  }
+}
+@media (max-width: 395px) {
+  .contact .biodata .biodata-details {
+    position: relative;
+    top: -20px;
   }
 }
