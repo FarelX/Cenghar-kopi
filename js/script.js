@@ -19,7 +19,6 @@ document.querySelector("#search-button").onclick = (e) => {
 const shoppingCart = document.querySelector(".shopping-cart");
 document.querySelector("#shopping-cart-button").onclick = (e) => {
   shoppingCart.classList.toggle("active");
-  e.preventDefault();
 };
 
 // Klik di luar elemen
@@ -82,8 +81,8 @@ function generateInvoice(customer, cartItems, total) {
     <p><strong>Date:</strong> ${new Date().toLocaleDateString()}</p>
     <p><strong>BILLING TO</strong></p>
     <p><strong>${customer.name}</strong></p>
-    <p>Contact: ${customer.phone}</p>
-    <p>Email: ${customer.email}</p>
+    <p>Phone : ${customer.phone}</p>
+    <p>Email : ${customer.email}</p>
     <h3>Item Description</h3>
     <table class="invoice-table">
       <thead>

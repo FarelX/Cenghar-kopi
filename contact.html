@@ -32,7 +32,9 @@
   </head>
   <body>
     <nav class="navbar" x-data>
-      <a href="index.html" class="navbar-logo">Cenghar<span>kopi</span>.</a>
+      <a href="index.html" class="navbar-logo"
+        ><img src="/img/logo.png" alt=""
+      /></a>
 
       <div class="navbar-av">
         <a href="index.html">Home</a>
@@ -51,7 +53,7 @@
 
       <div class="navbar-extra">
         <a href="#" id="search-button"><i data-feather="search"></i></a>
-        <a href="#" id="shopping-cart-button"
+        <a href="products.html" id="shopping-cart-button"
           ><i data-feather="shopping-cart"></i>
           <span
             class="quantity-badge"
@@ -138,11 +140,13 @@
       <!-- Biodata Section start -->
       <div class="biodata">
         <div class="biodata-img">
-          <img
-            src="img/foto parel.jpg"
-            alt="Your Photo"
-            class="biodata-photo"
-          />
+          <a href="https://www.instagram.com/farelxrizky/" target="_blank">
+            <img
+              src="img/foto parel.jpg"
+              alt="Your Photo"
+              class="biodata-photo"
+            />
+          </a>
         </div>
         <div class="biodata-details">
           <h1>Biodata</h1>
@@ -164,15 +168,15 @@
         <form action="">
           <div class="input-group">
             <i data-feather="user"></i>
-            <input type="text" name="" id="" placeholder="nama" />
+            <input type="text" name="" id="" placeholder="Your Name" />
           </div>
           <div class="input-group">
             <i data-feather="mail"></i>
-            <input type="text" name="" id="" placeholder="mail" />
+            <input type="text" name="" id="" placeholder="Your Email" />
           </div>
           <div class="input-group">
             <i data-feather="phone"></i>
-            <input type="text" name="" id="" placeholder="no hp" />
+            <input type="text" name="" id="" placeholder="No hp" />
           </div>
           <button type="submit" class="btn">Kirim Pesan</button>
         </form>
