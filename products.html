@@ -23,8 +23,8 @@
 
     <!-- Alpine JS -->
     <script
-      defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
     ></script>
 
     <!-- App -->
@@ -129,7 +129,7 @@
 
     <!-- Marquee Container -->
     <div class="marquee-container">
-      <marquee behavior="scroll" direction="left" scrollamount="10">
+      <marquee behavior="alternate" direction="left" scrollamount="10">
         <span
           >Rasakan Kelezatan Otentik dari Biji Kopi Pilihan Kami! Diskon 20%
           untuk Pembelian Pertama!</span
@@ -252,40 +252,61 @@
     </section>
 
     <!-- Modal Box Item Detail start -->
-    <div class="modal" id="item-detail-modal" x-show="showDetailModal">
-      <div class="modal-container">
-        <a href="#" class="close-icon" @click="showDetailModal = false"
-          ><i data-feather="x"></i
-        ></a>
+
+    <!-- Modal -->
+    <section class="modal" x-data x-cloak x-show="$store.modal.isActive">
+      <div
+        class="modal-container"
+        @click.outside="$store.modal.isActive = false"
+      >
+        <a
+          href="#"
+          class="close-icon"
+          @click.prevent="$store.modal.isActive = false"
+        >
+          <svg
+            width="24"
+            height="24"
+            fill="currentColor"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <use href="img/feather-sprite.svg#x" />
+          </svg>
+        </a>
         <div class="modal-content">
-          <img
-            :src="`img/products/${currentItem.img}`"
-            :alt="currentItem.name"
-          />
+          <img id="modal-img" src="" alt="gambar kopi" />
           <div class="product-content">
-            <h3 x-text="currentItem.name"></h3>
-            <p x-text="currentItem.description"></p>
-            <div class="product-stars">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star"></i>
-            </div>
-            <div class="product-price">
-              <span x-text="rupiah(currentItem.price)"></span>
-            </div>
+            <h3 id="modal-title">Title</h3>
+            <p id="modal-description">Description</p>
+            <div class="product-price" id="modal-price"></div>
+            <a href="#" @click.prevent="$store.cart.add($store.modal.product)">
+              <svg
+                width="24"
+                height="24"
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <use href="img/feather-sprite.svg#shopping-cart" />
+              </svg>
+              <span>Add To Cart</span>
+            </a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- Modal Box Item Detail end -->
 
     <!-- Invoice Modal start -->
-    <div class="modal" id="invoice-modal">
-      <div class="modal-container">
+    <div class="modall" id="invoice-modal">
+      <div class="modal-containerr">
         <a href="#"><i data-feather="x" class="close-icon"></i></a>
-        <div class="modal-content">
+        <div class="modal-contentt">
           <h2>Cenghar Kopi</h2>
           <h3>Invoice</h3>
           <div id="invoice-details">
@@ -319,7 +340,7 @@
       </div>
 
       <div class="credit">
-        <p>Created by <a href="">farelrizky</a>. | &copy; 2024.</p>
+        <p>Created by <a href="">farelrizky</a> | All Rights Reserved</p>
       </div>
     </footer>
     <!-- Footer end -->

@@ -40,40 +40,6 @@ document.addEventListener("click", function (e) {
   }
 });
 
-// Modal Box
-const itemDetailModal = document.querySelector("#item-detail-modal");
-const itemDetailButtons = document.querySelectorAll(".item-detail-button");
-
-itemDetailButtons.forEach((btn) => {
-  btn.onclick = (e) => {
-    const item = Alpine.store("products").items.find(
-      (item) => item.id == e.currentTarget.dataset.id
-    );
-    Alpine.store("products").showDetails(item);
-    itemDetailModal.style.display = "flex";
-    e.preventDefault();
-  };
-});
-
-// klik tombol close modal
-document.querySelectorAll(".modal .close-icon").forEach((btn) => {
-  btn.onclick = (e) => {
-    e.preventDefault();
-    e.target.closest(".modal").style.display = "none";
-  };
-});
-
-// klik di luar modal
-window.onclick = (e) => {
-  if (
-    e.target === itemDetailModal ||
-    e.target === document.querySelector("#invoice-modal")
-  ) {
-    e.target.style.display = "none";
-  }
-};
-
-// percobaan
 // Function to generate invoice HTML
 function generateInvoice(customer, cartItems, total) {
   let invoiceHTML = `
@@ -135,13 +101,12 @@ document.querySelector("#checkout-button").addEventListener("click", (e) => {
 });
 
 // Close modal event listener
-document.querySelectorAll(".modal .close-icon").forEach((btn) => {
+document.querySelectorAll(".modall .close-icon").forEach((btn) => {
   btn.onclick = (e) => {
     e.preventDefault();
-    e.target.closest(".modal").style.display = "none";
+    e.target.closest(".modall").style.display = "none";
   };
 });
-
 // Click outside the modal to close it
 window.onclick = (e) => {
   if (e.target === document.querySelector("#invoice-modal")) {
