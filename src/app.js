@@ -45,6 +45,7 @@ document.addEventListener("alpine:init", () => {
       document.querySelector("#modal-description").innerText = item.description;
       document.querySelector("#modal-price").innerText = rupiah(item.price);
       Alpine.store("modal").isActive = true; // Aktifkan modal
+      Alpine.store("modal").product = item;
     },
   }));
 
