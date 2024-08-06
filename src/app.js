@@ -97,6 +97,7 @@ document.addEventListener("alpine:init", () => {
 
   Alpine.store("modal", {
     isActive: false,
+    product: null,
   });
 });
 
