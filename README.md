@@ -36,3 +36,5 @@ This project is a responsive website designed for Cenghar Kopi to showcase and s
 - Designing and building a user-centered interface from scratch
 - Implementing features essential for a modern e-commerce platform
 - Integrating HTML, CSS, and JavaScript to create a cohesive and interactive front-end experience
+
+🔗 [Live Preview](https://farelx.github.io/Cenghar-kopi/)
